@@ -29,10 +29,7 @@ class _HomeState extends State<Home> {
 
    @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Bottom Navigation Bar'),
-      ),
+    return Scaffold(  
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
