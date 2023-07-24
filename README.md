@@ -14,4 +14,8 @@ Desain tampilan dibebaskan berdasarkan kreatifitas masing-masing.
 Jawaban tugas akan berisi nama aplikasi (yang digunakan saat upload ke playstore), capture screen aplikasi dan link playstore aplikasi anda (link aplikasi dapat ditaruh di GDrive apabila aplikasi anda belum di approve di playstore)
 Contoh tampilan minimal.
 
-# binustp2
+# Berikut adalah hasil dari design aplikasi yang sesuai dengan instruksi
+
+
+
+![binustp2](https://github.com/BillyWithFlutter/binustp2/assets/100205589/9802b8de-2e6a-4e6c-b4cb-7129d4f5c8d5)
