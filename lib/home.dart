@@ -12,13 +12,12 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-
   int _selectedIndex = 0;
 
-  static List<Widget> _widgetOptions = <Widget>[
-    HomeScreen(),
-    FormScreen(),
-    MapScreen(),
+  static final List<Widget> _widgetOptions = <Widget>[
+    const HomeScreen(),
+    const FormScreen(),
+    const MapScreen(),
   ];
 
   void _onItemTapped(int index) {
@@ -27,9 +26,9 @@ class _HomeState extends State<Home> {
     });
   }
 
-   @override
+  @override
   Widget build(BuildContext context) {
-    return Scaffold(  
+    return Scaffold(
       body: Center(
         child: _widgetOptions.elementAt(_selectedIndex),
       ),
@@ -54,5 +53,3 @@ class _HomeState extends State<Home> {
     );
   }
 }
-
-

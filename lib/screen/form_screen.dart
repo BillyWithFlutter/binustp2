@@ -1,3 +1,5 @@
+// ignore_for_file: library_private_types_in_public_api
+
 import 'package:flutter/material.dart';
 
 import '../user.dart';
@@ -102,6 +104,7 @@ class _FormScreenState extends State<FormScreen> {
                 onPressed: () async {
                   if (_formKey.currentState!.validate()) {
                     await UserPreferences.addData(name, hobby);
+                    // ignore: use_build_context_synchronously
                     ScaffoldMessenger.of(context).showSnackBar(
                       const SnackBar(
                         content: Text('Form submitted'),
