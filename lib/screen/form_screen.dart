@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+
+import '../user.dart';
 
 class FormScreen extends StatefulWidget {
-  static const routeName = '/user-profile';
+  static const routeName = '/form-profile';
+
+  const FormScreen({super.key});
 
   @override
   _FormScreenState createState() => _FormScreenState();
@@ -16,6 +19,8 @@ class _FormScreenState extends State<FormScreen> {
   String name = '';
   String hobby = '';
 
+  String appBarTitle = '';
+
   @override
   void dispose() {
     _nameController.dispose();
@@ -23,28 +28,44 @@ class _FormScreenState extends State<FormScreen> {
     super.dispose();
   }
 
-  Future<void> _saveUserData() async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    await prefs.setString('name', name);
-    await prefs.setString('hobby', hobby);
+  @override
+  void initState() {
+    super.initState();
+    fetchDataAndPopulateFields();
+  }
+
+  Future<void> fetchDataAndPopulateFields() async {
+    Map<String, String> userData = await UserPreferences.fetchData();
+    setState(() {
+      _nameController.text = userData['name']!;
+      _hobbyController.text = userData['hobby']!;
+      appBarTitle = userData['name']!; // Update the AppBar title
+    });
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('User Profile'),
+        title: const Text("Form Screen"),
       ),
       body: Padding(
-        padding: EdgeInsets.all(16.0),
+        padding: const EdgeInsets.all(16.0),
         child: Form(
           key: _formKey,
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: <Widget>[
+              Align(
+                alignment: Alignment.centerRight,
+                child: Text(
+                  appBarTitle,
+                  style: const TextStyle(fontSize: 20),
+                ),
+              ),
               TextFormField(
                 controller: _nameController,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   labelText: 'Name',
                 ),
                 validator: (value) {
@@ -61,7 +82,7 @@ class _FormScreenState extends State<FormScreen> {
               ),
               TextFormField(
                 controller: _hobbyController,
-                decoration: InputDecoration(
+                decoration: const InputDecoration(
                   labelText: 'Hobby',
                 ),
                 validator: (value) {
@@ -76,19 +97,23 @@ class _FormScreenState extends State<FormScreen> {
                   });
                 },
               ),
-              SizedBox(height: 16.0),
+              const SizedBox(height: 16.0),
               ElevatedButton(
-                onPressed: () {
+                onPressed: () async {
                   if (_formKey.currentState!.validate()) {
-                    _saveUserData();
+                    await UserPreferences.addData(name, hobby);
                     ScaffoldMessenger.of(context).showSnackBar(
-                      SnackBar(
+                      const SnackBar(
                         content: Text('Form submitted'),
                       ),
                     );
+
+                    setState(() {
+                      appBarTitle = name;
+                    });
                   }
                 },
-                child: Text('Submit'),
+                child: const Text('Submit'),
               ),
             ],
           ),
