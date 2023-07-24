@@ -1,17 +1,17 @@
 # binustp2
 
-A new Flutter project.
+Tugas Personal 2.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+Instruksi:
+Pada tugas ini anda akan di minta untuk melakukan publish aplikasi ke google app market (playstore).
+Di dalam aplikasi akan terdapat 3 halaman diantaranya :
+1.	Halaman home dapat berisi media apa saja atau hanya sekedar kalimat “selamat datang pada aplikasi ini”
+2.	Halaman isi data diri yang berisi form untuk pengunjung memasukan data identitas berupa NAMA dan HOBI ke aplikasi sehingga selanjutnya muncul nama pengguna di setiap halaman di kanan atas layar
+3.	Halaman google maps yang akan berisi data peta google yang harus kalian minta melalui googleAPI
+Desain tampilan dibebaskan berdasarkan kreatifitas masing-masing. 
+Jawaban tugas akan berisi nama aplikasi (yang digunakan saat upload ke playstore), capture screen aplikasi dan link playstore aplikasi anda (link aplikasi dapat ditaruh di GDrive apabila aplikasi anda belum di approve di playstore)
+Contoh tampilan minimal.
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
 # binustp2
