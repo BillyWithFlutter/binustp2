@@ -22,3 +22,5 @@ Jawaban tugas akan berisi nama aplikasi (yang digunakan saat upload ke playstore
 dan ini adalah hasi ketika di input dengan data baru, maka value pada halaman lain juga akan berubah. 
 
 ![binustp2 1](https://github.com/BillyWithFlutter/binustp2/assets/100205589/38259353-01bd-45f8-a9d9-a92e1e8895f3)
+
+
